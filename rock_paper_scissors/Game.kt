@@ -13,6 +13,7 @@ fun getUserChoice(optionsParam: Array<String>):String{
     print("Please enter one of the following: ")
     for (item in optionsParam) print(" $item")
     println(".")
+    //? - means a load null, !! - means not null readLine()!!.capitalize()
     val userInput:String? = readLine()?.capitalize()
     if (userInput != null && userInput in optionsParam){
         isValidChoice = true
