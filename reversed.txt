@@ -1,0 +1,90 @@
+import java.util.*
+
+fun main(args: Array<String>) {
+    val scanner = Scanner(System.`in`)
+    // put your code here
+    val duration = scanner.nextInt()
+    val food = scanner.nextInt()
+    val flight = scanner.nextInt()
+    val night = scanner.nextInt()
+    println((food*duration) + (flight*2) + (night*(duration-1)))
+}
+
+import java.util.Scanner
+
+fun main(args: Array<String>) {
+    val scanner = Scanner(System.`in`)
+
+    val s = scanner.next()
+
+    print(s.reversed())
+}
+
+import java.util.Scanner
+
+fun main(args: Array<String>) {
+    val scanner = Scanner(System.`in`)
+    // put your code here
+    val number = scanner.nextInt()
+    print(number%10)
+    print((number%100)/10)
+    print((number%1000)/100)
+}
+
+import java.util.Scanner
+
+fun main(args: Array<String>) {
+    val scanner = Scanner(System.`in`)
+    val number = scanner.next()
+    val uno = number[0]
+    val dos = number[1]
+    val tres = number[2]
+    print(tres.toString())
+    print(dos.toString())
+    print(uno.toString())
+}
+
+import java.util.Scanner
+
+fun main(args: Array<String>) {
+
+    // Formula: Start with 'reversed_num' variable at 0
+    // Step 1 - get first digit: input % 10 --> (reversed_num * 10) + first digit
+    // Step 2 - get second digit: (input / 10) % 10 --> (reversed_num * 10) + second digit
+    // Step 3 - get last digit: input / 100 --> (reversed_num * 10) + last digit
+
+    val scanner = Scanner(System.`in`)
+    // put your code here
+    val input = scanner.nextInt()
+    var reversed = 0
+
+    // Example numbers using input of 862...
+    val reversed_first_num = input % 10 // 2
+    reversed = (reversed * 10) + reversed_first_num // 0 + 2 = 2
+
+    val reversed_second_num = (input / 10) % 10 // (86) % 10 = 6
+    reversed = (reversed * 10) + reversed_second_num // (2 * 10) + 6 = 26
+
+    val reversed_third_num = input / 100 // 8
+    reversed = (reversed * 10) + reversed_third_num // (26 * 10) + 8 = 268
+
+    print(reversed)
+}
+
+import java.util.Scanner
+
+fun main(args: Array<String>) {
+    val scanner = Scanner(System.`in`)
+    val digit = scanner.nextInt()
+    val res = digit / 100 + digit % 100 / 10 * 10 + digit % 100 % 10 * 100
+    println(res)
+}
+
+// Posted from EduTools plugin
+import java.util.Scanner
+
+fun main(args: Array<String>) {
+    val scanner = Scanner(System.`in`)
+    val string = scanner.nextInt().toString()
+    println(string.reversed())
+}

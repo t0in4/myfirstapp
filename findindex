@@ -1,0 +1,63 @@
+import java.util.Scanner
+
+fun main(){
+    val scanner = Scanner(System.`in`)
+    val text = readLine()!!
+    val num = scanner.nextInt()
+
+    val index = text[num-1]
+
+    println("Symbol # $num of the string \"$text\" is '$index' ")
+}
+
+
+import java.util.Scanner
+
+fun main(args: Array<String>) {
+    val scanner = Scanner(System.`in`)
+    val line = scanner.nextLine()
+    val num = scanner.nextInt()
+    val par: Char = '"'
+    print("Symbol # $num of the string " + par + "$line" + par + " is '${line[num - 1]}'")
+}
+
+
+import java.util.*
+
+fun main(args: Array<String>) {
+    val scanner = Scanner(System.`in`)
+    var line = with(scanner) { nextLine() }
+    var index = with(scanner) { nextInt() }
+    print("Symbol # $index of the string \"$line\" is '${line[index - 1]}'")
+}
+
+import java.util.Scanner
+
+fun main(args: Array<String>) {
+    val scanner = Scanner(System.`in`)
+    val word = scanner.nextLine()
+    val number = scanner.nextInt()
+    val character = '"'
+    println("Symbol # $number of the string $character$word$character is '${word[number - 1]}'")
+}
+
+import java.util.Scanner
+
+fun main(args: Array<String>) {
+    val scanner = Scanner(System.`in`)
+    val str = scanner.nextLine()
+    val num = scanner.nextInt()
+    println("Symbol # $num of the string \"$str\" is \'${str.get(num - 1)}\'")
+}
+
+import java.util.*
+
+fun main(args: Array<String>) {
+    val scanner = Scanner(System.`in`)
+    val string = scanner.nextLine()
+    val n = scanner.nextInt()
+    val index = n - 1
+    val output = "Symbol # $n of the string \"$string\" is \'${string[index]}\'"
+    println(output)
+}
+

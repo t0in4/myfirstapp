@@ -1,0 +1,46 @@
+import java.util.Scanner
+
+fun main(args: Array<String>) {
+    val scanner = Scanner(System.`in`)
+    val first = scanner.nextInt()
+    val second = scanner.nextInt()
+    val third = scanner.nextInt()
+    val result1 = first >= second 
+    val result2 = first <= third
+    val result3 = first <= second
+    val result4 = first >= third
+    val result5 = result1 || result4
+    val result6 = result2 ||result3
+    val result7 = result5 && result6
+    
+    println(result7)
+    // put your code here
+}
+
+import java.util.Scanner
+
+fun main(args: Array<String>) {
+    val scanner = Scanner(System.`in`)
+    // put your code here
+    val n1 = scanner.nextInt()
+    val n2 = scanner.nextInt()
+    val n3 = scanner.nextInt()
+
+    if (( n2 >= n1 && n3 <= n1 ) || ( n2 <= n1 && n1 <= n3 )) {
+        println(true)
+    }else println(false)
+}
+
+
+// Posted from EduTools plugin
+import java.util.*
+
+fun main(args: Array<String>) {
+    val scanner = Scanner(System.`in`)
+    val a = scanner.nextInt()
+    val b = scanner.nextInt()
+    val c = scanner.nextInt()
+
+    println(a in b..c || a in c..b)
+
+}
