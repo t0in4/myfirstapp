@@ -1,0 +1,63 @@
+import java.util.*
+
+fun main(args: Array<String>) {
+    val scanner = Scanner(System.`in`)
+    val num = scanner.nextInt()
+    val option = scanner.next()
+    val probe = "true"
+    val test = option == probe
+    var result: Boolean = true
+    if (test) {
+        result = num >= 15 && num <= 25
+        println(result)} else {
+            result = num >= 10 && num <= 20
+            println(result)}
+        }
+
+
+import java.util.Scanner
+
+fun main(args: Array<String>) {
+    val scanner = Scanner(System.`in`)
+    val cups = scanner.nextInt()
+    val weekend = scanner.next()
+    val party = (cups >= 10 && cups <= 20 && weekend == "false") || (cups >= 15 && cups <= 25 && weekend == "true")
+    println(party)
+}
+
+
+import java.util.Scanner
+
+fun main(args: Array<String>) {
+    val scanner = Scanner(System.`in`)
+    val cups = scanner.nextInt()
+    val weekend = scanner.nextBoolean()
+
+    println((!weekend && (cups in 10..20)) || (weekend && (cups in 15..25)))
+}
+
+import java.util.Scanner
+
+fun main(args: Array<String>) {
+    val scanner = Scanner(System.`in`)
+    // put your code here
+    val a = scanner.nextInt()
+    val isWeekend = scanner.nextBoolean()
+
+    if (!isWeekend) {
+        print(10 <= a && a <= 20)
+    } else {
+        println(15 <= a && a <= 25)
+    }
+}
+
+// Posted from EduTools plugin
+import java.util.*
+
+fun main(args: Array<String>) {
+    val scanner = Scanner(System.`in`)
+    val cups = scanner.nextInt()
+    val isWeekend = scanner.nextBoolean()
+
+    println(isWeekend && cups >= 15 && cups <= 25|| !isWeekend &&cups>=10&&cups<=20)
+}

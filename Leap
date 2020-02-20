@@ -1,0 +1,64 @@
+import java.util.*
+
+fun main(args: Array<String>) {
+    val scanner = Scanner(System.`in`)
+    val year = scanner.nextInt()
+    if ((year%4==0) && !(year%100==0))
+        println("Leap")
+     
+     else if (year%400 == 0)
+        println("Leap")
+            
+    else (println("Regular"))
+
+    // write your code here
+}
+
+import java.util.Scanner
+
+fun main(args: Array<String>) {
+    val scanner = Scanner(System.`in`)
+    val year = scanner.nextInt()
+    if (year >= 1900 && year <= 3000) {
+        println(if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) "Leap" else "Regular")
+    }
+}
+
+// Posted from EduTools plugin
+import java.util.Scanner
+fun main(args: Array<String>) {
+    val scan = Scanner(System.`in`)
+    val y = scan.nextInt()
+    println(if ((y % 4 == 0 && y % 100 != 0) || y % 400 == 0) "Leap" else "Regular")
+}
+
+import java.util.*
+
+fun main(args: Array<String>) {
+    val scanner = Scanner(System.`in`)
+    val year = scanner.nextInt()
+    println(isLeapYear(year))
+}
+
+fun isLeapYear(year: Int): String {
+    if (year % 400 == 0) return "Leap"
+    else if (year % 4 == 0 && year % 100 != 0) return "Leap"
+    return "Regular"
+}
+
+
+// Posted from EduTools plugin
+import java.util.*
+
+fun main(args: Array<String>) {
+    val scanner = Scanner(System.`in`)
+    val year = scanner.nextInt()
+
+    if (year % 4 == 0){
+        if (year % 400 == 0){
+            println("Leap")
+        } else if (year % 100 == 0) {
+            println("Regular")
+        } else println("Leap")
+    } else println("Regular")
+}

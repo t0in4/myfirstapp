@@ -1,0 +1,18 @@
+import java.util.Scanner
+
+fun main(args: Array<String>) {
+    val scanner = Scanner(System.`in`)
+    // put your code here
+    val (a, b, c) = readLine()!!.split(' ')
+    println(a != b && a != c && c != b)
+}
+
+import java.util.Scanner
+
+fun main(args: Array<String>) {
+    val scanner = Scanner(System.`in`)
+    val (a, b, c) = readLine()!!.split(' ')
+    //println(a.toInt() <= 0 || b.toInt() <= 0 || c.toInt() != 0) 
+    //println(a.toInt() - b.toInt() > 1 && a.toInt() - c.toInt() > 1 && b.toInt() - c.toInt() > 1)
+    println(a[0] == '-' || b[0] == '-' || c[0] == '-')
+}
