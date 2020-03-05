@@ -1,0 +1,589 @@
+package machine
+import java.util.Scanner
+
+fun main(args: Array<String>) {
+    val scanner = Scanner(System.`in`)
+
+
+    println("Write how many ml of water the coffee machine has:")
+    val water = scanner.nextInt()
+    println("Write how many ml of milk the coffee machine has:")
+    val milk = scanner.nextInt()
+    println("Write how many grams of coffee beans the coffee machine has:")
+    val beans = scanner.nextInt()
+    println("Write how many cups of coffee you will need:")
+    val cups = scanner.nextInt()
+    if ((water >= (200 * cups)) && (milk >= (50 * cups)) && (beans >= (15 * cups))) {
+        if (((water - (cups * 200)) >= 200) && ((milk - (cups * 50)) >= 50) && ((beans - (cups * 15)) >= 15))
+        println("Yes, I can make that amount of coffee (and even ${minOf(((water - cups * 200) / 200), ((milk - cups * 50) / 50), ((beans - cups * 15) / 15))} more than that)")
+        else println("Yes, I can make that amount of coffee")
+    }
+
+    else println("No, I can make only ${minOf((water / 200), (milk / 50), (beans / 15))} cups of coffee")
+}
+
+package machine
+
+fun main(){
+    println("Write how many ml of water the coffee machine has: ")
+    var water = readLine()!!.toInt() //Get water value
+    println("Write how many ml of milk the coffee machine has: ")
+    var milk = readLine()!!.toInt() //Get milk value
+    println("Write how many grams of coffee beans the coffee machine has: ")
+    var beans = readLine()!!.toInt() //Get beans value
+    println("Write how many cups of coffee you will need: ")
+    var coffee = readLine()!!.toInt() //Get desired coffee value
+
+    water = water / 200 //Break down water so it's divisible by coffee
+    milk = milk / 50 //Same with milk
+    beans = beans / 15 //And same with beans
+
+    if (water <= milk && water <= beans) {
+        if (water < coffee) {
+            println("No, I can make only $water cup(s) of coffee")
+        } else if (water > coffee) {
+            println("Yes, I can make that amount of coffee (and even ${water - coffee} more than that)")
+        } else if (water == coffee) {
+            println("Yes, I can make that amount of coffee")
+        }
+
+    } else if (milk <= water && milk <= beans) {
+        if (milk < coffee) {
+            println("No, I can make only $milk cup(s) of coffee")
+        } else if (milk > coffee) {
+            println("Yes, I can make that amount of coffee (and even ${milk - coffee} more than that)")
+        } else if (milk == coffee) {
+            println("Yes, I can make that amount of coffee")
+        }
+
+    } else if (beans <= water && beans <= milk) {
+        if (beans < coffee) {
+            println("No, I can make only $beans cup(s) of coffee")
+        } else if (beans > coffee) {
+            println("Yes, I can make that amount of coffee (and even ${beans - coffee} more than that)")
+        } else if (beans == coffee) {
+            println("Yes, I can make that amount of coffee")
+        }
+    }
+}
+
+
+package machine
+
+import java.util.Scanner // a class (type) from the Java standard library
+
+fun main() {
+    val scanner = Scanner(System.`in`) // reads data
+	val waterNeeded = 200
+    val milkNeeded = 50
+    val beansNeeded = 15
+    var water: Int
+    var milk: Int
+    var beans: Int
+    var coffesWanted: Int
+    var coffesPossible = 0
+    
+    println("Write how many ml of water the coffee machine has: > ")
+    water = scanner.nextInt()
+    println("Write how many ml of milk the coffee machine has: > ")
+    milk = scanner.nextInt()
+    println("Write how many grams of coffee beans the coffee machine has: > ")
+    beans = scanner.nextInt()
+    println("Write how many cups of coffee you will need: > ")
+    coffesWanted = scanner.nextInt()
+    
+    coffesPossible = if ( (water / waterNeeded) > (milk / milkNeeded) ) {
+        if ( (milk / milkNeeded) > ( beans / beansNeeded)) {
+            (beans / beansNeeded)
+        } else {
+            (milk / milkNeeded)
+        }    
+    } else {
+        if ( (water / waterNeeded) > ( beans / beansNeeded) )
+            (beans / beansNeeded)
+        else
+            (water / waterNeeded)    
+    }
+    
+    if ( coffesPossible == coffesWanted) 
+        println("Yes, I can make that amount of coffee")
+    else {
+        if ( coffesPossible > coffesWanted )
+            println("Yes, I can make that amount of coffee (and even ${coffesWanted - coffesPossible} more than that)")
+        else
+            println("No, I can make only $coffesPossible cups of coffee")    
+    }
+}
+
+
+package machine
+
+import java.lang.Integer.min
+import java.util.Scanner
+
+fun main() {
+    val water = 200
+    val milk = 50
+    val coffee = 15
+    val scanner = Scanner(System.`in`)
+    print("Write how many ml of water the coffee machine has: ")
+    val waterLoad = scanner.nextInt()
+    print("Write how many ml of milk the coffee machine has: ")
+    val milkLoad = scanner.nextInt()
+    print("rite how many grams of coffee beans the coffee machine has: ")
+    val coffeeLoad = scanner.nextInt()
+    print("Write how many cups of coffee you will need: ")
+    val cupsRequired = scanner.nextInt()
+    val cups = min(waterLoad / water, min(milkLoad / milk, coffeeLoad / coffee))
+    if (cups >= cupsRequired) {
+        println("Yes, I can make that amount of coffee")
+        print(if (cups > cupsRequired) " (and even ${cupsRequired - cups} more than that)" else "")
+    } else {
+        println("No, I can make only $cups cups of coffee")
+    }
+}
+
+
+package machine
+
+fun main() {
+    println("Write how many ml of water the coffee machine has: > ")
+    val water = readLine()!!.toInt()
+    println("Write how many ml of milk the coffee machine has: > ")
+    val milk = readLine()!!.toInt()
+    println("Write how many grams of coffee beans the coffee machine has: > ")
+    val coffeBeans = readLine()!!.toInt()
+    println("Write how many cups of coffee you will need: > ")
+    val cups = readLine()!!.toInt()
+    var total = 0
+    if (water >= 200 && milk >= 50 && coffeBeans >= 15){
+        
+            val numberOfWater = water / 200
+            val numberOfMilke = milk / 50
+            val numberOfCoffeBeans = coffeBeans / 15
+            
+            if (numberOfWater <= numberOfMilke && numberOfWater <= numberOfCoffeBeans) total = numberOfWater 
+            if(numberOfMilke <= numberOfWater && numberOfMilke <= numberOfCoffeBeans) total = numberOfMilke
+            if(numberOfCoffeBeans <= numberOfWater && numberOfCoffeBeans <= numberOfMilke) total = numberOfCoffeBeans      
+    }
+    
+    if(total == cups) println("Yes, I can make that amount of coffe")
+    else if (total > cups) println("Yes, I can make that amount of coffe (and even ${total - cups} more than that)")
+    else println("No, I can make only $total cups of coffe") 
+}
+
+
+package machine
+import java.util.Scanner
+
+fun main() {
+    val scanner = Scanner(System.`in`)
+    print("Write how many ml of water the coffee machine has: ")
+    val supplyWater = scanner.nextInt()
+    print("Write how many ml of milk the coffee machine has: ")
+    val supplyMilk = scanner.nextInt()
+    print("Write how many grams of coffee beans the coffee machine has: ")
+    val supplyCoffeeBeans = scanner.nextInt()
+
+    val availableCupsOfWater = supplyWater / 200
+    val availableCupsOfMilk = supplyMilk / 50
+    val availableCupsOfCoffeeBeans = supplyCoffeeBeans / 15
+
+    val availableCupsOfCoffee = if (availableCupsOfWater < availableCupsOfCoffeeBeans) {
+        if (availableCupsOfWater < availableCupsOfMilk) availableCupsOfWater else availableCupsOfMilk
+    } else {
+        if (availableCupsOfCoffeeBeans < availableCupsOfMilk) availableCupsOfCoffeeBeans else availableCupsOfMilk
+    }
+
+    print("Write how many cups of coffee you will need: ")
+    val requestedCupsOfCoffee = scanner.nextInt()
+
+    val message = if (availableCupsOfCoffee > requestedCupsOfCoffee) {
+        "Yes, I can make that amount of coffee (and even ${availableCupsOfCoffee - requestedCupsOfCoffee} more than that)"
+    } else if (availableCupsOfCoffee < requestedCupsOfCoffee) {
+        "No, I can make only $availableCupsOfCoffee cups of coffee"
+    } else "Yes, I can make that amount of coffee"
+    println(message)
+}
+
+
+package machine
+
+import java.util.Scanner
+
+fun main() {
+    val scanner = Scanner(System.`in`)
+    val water = 200
+    val milk = 50
+    val beans = 15
+
+    println("Write how many ml of water the coffee machine has: ")
+    val waterHas = scanner.nextInt()
+
+    println("Write how many ml of milk the coffee machine has: ")
+    val milkHas = scanner.nextInt()
+
+    println("Write how many grams of coffee beans the coffee machine has: ")
+    val beansHas = scanner.nextInt()
+
+    println("Write how many cups of coffee you will need: ")
+    val cups = scanner.nextInt()
+
+    val canMakeCups = minOf(waterHas / water, milkHas / milk, beansHas / beans)
+
+    when {
+        canMakeCups == cups -> println("Yes, I can make that amount of coffee")
+        canMakeCups < cups -> println("No, I can make only $canMakeCups cups of coffee")
+        canMakeCups > cups -> println("Yes, I can make that amount of coffee (and even ${canMakeCups.minus(cups)} more than that)")
+    }
+}
+
+
+package machine
+
+import java.util.Scanner
+
+fun main() {
+    val WATER = 200
+    val MILK = 50
+    val BEANS = 15
+
+    val scanner = Scanner(System.`in`)
+    println("Write how many ml of water the coffee machine has: ")
+    val currentWater = scanner.nextInt()
+    println("Write how many ml of milk the coffee machine has: ")
+    val currentMilk = scanner.nextInt()
+    println("Write how many grams of coffee beans the coffee machine has: ")
+    val currentBeans = scanner.nextInt()
+    println("Write how many cups of coffee you will need: ")
+    val cups = scanner.nextInt()
+
+    val waterMultiple = currentWater/WATER
+    val milkMultiple = currentMilk/MILK
+    val beansMultiple = currentBeans/BEANS
+    val cupsMultiple = minOf(waterMultiple, milkMultiple, beansMultiple)
+
+    when {
+        cupsMultiple == 0 -> println("No, I can make only 0 cups of coffee")
+        cupsMultiple < cups -> println("No, I can only make $cupsMultiple cups of coffee")
+        cupsMultiple == cups -> println("Yes, I can make that amount of coffee")
+        else -> println("Yes, I can make that amount of coffee (and even ${cupsMultiple - cups} more than that")
+    }
+}
+
+
+package machine
+import java.util.Scanner
+fun main(args: Array<String>) {
+    println("Write how many ml of water the coffee machine has:")
+    val scanner = Scanner(System.`in`)
+    val water = scanner.nextInt()
+    println("Write how many ml of milk the coffee machine has:")
+    val milk = scanner.nextInt()
+    println("Write how many grams of coffee beans the coffee machine has:")    
+    val beans = scanner.nextInt()
+    println("Write how many cups of coffee you will need:")
+    val cups = scanner.nextInt()
+    val w1 = water / 200
+    val m1 = milk / 50
+    val b1 = beans / 15
+    val mc = if (w1 > m1) {
+        m1
+    } else if (m1 > b1) {
+        b1
+    }  else { w1 }
+    val z = mc - cups
+    if (z == 0) {
+        print("Yes, I can make that amount of coffee")
+    } else if (z > 0) {
+        print ("Yes, I can make that amount of coffee (and even $z more than that)")
+    } else if (z < 0) {
+        print("No, I can make only $mc cups of coffee")}
+}
+
+    
+package machine
+
+import java.util.Scanner
+
+val WATER_ONE_CUP = 200
+val MILK_ONE_CUP = 50
+val COFFEE_ONE_CUP = 15
+
+fun main() {
+    val scanner = Scanner(System.`in`)
+    print("Write how many ml of water the coffee machine has: ")
+    val waterSupply = scanner.nextInt()
+    print("Write how many ml of milk the coffee machine has: ")
+    val milkSupply = scanner.nextInt()
+    print("Write how many grams of coffee beans the coffee machine has: ")
+    val coffeeSupply = scanner.nextInt()
+    print("Write how many cups of coffee you will need: ")
+    val cups = scanner.nextInt()
+    
+    val maxCupsWater = waterSupply / WATER_ONE_CUP
+    val maxCupsMilk = milkSupply / MILK_ONE_CUP
+    val maxCupsCoffee = coffeeSupply / COFFEE_ONE_CUP
+
+    val limit = minOf(maxCupsWater, maxCupsMilk, maxCupsCoffee) 
+
+    if (limit == cups) {
+        println("Yes, I can make that amount of coffee")
+    } else if (limit > cups) {
+        println("Yes, I can make that amount of coffee (and even ${limit-cups} more than that)")
+    } else {
+        println("No, I can make only $limit cups of coffee")
+    }
+    
+}
+
+
+package machine
+
+import java.util.*
+
+val WATER = 200
+val MILK = 50
+val COFFEE = 15
+
+fun readValueWithPrompt(prompt: String, scanner: Scanner): Int {
+    print(prompt)
+    return scanner.nextInt()
+}
+
+fun isEnoughForCups(cups: Int, water: Int, milk: Int, coffee: Int): Boolean {
+    return (water - cups * WATER >= 0) && (milk - cups * MILK >= 0) && (coffee - cups * COFFEE >= 0)
+}
+
+fun calcMaxCups(water: Int, milk: Int, coffee: Int): Int {
+    var cups = 1
+    while (isEnoughForCups(cups, water, milk, coffee)) {
+        cups++
+    }
+    return cups - 1
+}
+
+fun main() {
+    val scanner = Scanner(System.`in`)
+
+    val water = readValueWithPrompt("Write how many ml of water the coffee machine has:", scanner)
+    val milk = readValueWithPrompt("Write how many ml of milk the coffee machine has:", scanner)
+    val coffee = readValueWithPrompt("Write how many grams of coffee beans the coffee machine has:", scanner)
+    val cups = readValueWithPrompt("Write how many cups of coffee you will need:", scanner)
+
+    val maxCups = calcMaxCups(water, milk, coffee)
+
+    if (maxCups == cups) {
+        println("Yes, I can make that amount of coffee")
+    } else if (maxCups > cups) {
+        println("Yes, I can make that amount of coffee (and even ${maxCups - cups} more than that)")
+    } else if (maxCups < cups) {
+        println("No, I can make only $maxCups cups of coffee")
+    }
+}
+
+
+package machine
+import java.util.Scanner
+
+fun main() {
+    val scanner = Scanner(System.`in`)
+    println("Write how many ml of water the coffee machine has: ")
+    val water = scanner.nextInt() / 200
+    println("Write how many ml of milk the coffee machine has: ")
+    val milk = scanner.nextInt() / 50
+    println("Write how many grams of coffee beans the coffee machine has: ")
+    val coffe = scanner.nextInt() / 15
+    println("Write how many cups of coffee you will need: ")
+    val cups = scanner.nextInt()
+    val amountOfCupsAvailable = if(water < milk && water < coffe) water else if (milk < coffe) milk else coffe
+    println(
+        if(amountOfCupsAvailable < cups) "No, I can make only $amountOfCupsAvailable cups of coffee"
+        else if(amountOfCupsAvailable == cups) "Yes, I can make that amount of coffee"
+        else "Yes, I can make that amount of coffee (and even ${amountOfCupsAvailable - cups} more than that)"
+    )
+}
+
+
+package machine
+
+import java.util.Scanner
+
+fun main() {
+    val scanner = Scanner(System.`in`)
+    print("Write how many ml of water the coffee machine has: ")
+    val totalWater = scanner.nextInt()
+    print("Write how many ml of milk the coffee machine has: ")
+    val totalMilk = scanner.nextInt()
+    print("Write how many grams of coffee beans the coffee machine has: ")
+    val totalCoffee = scanner.nextInt()
+    print("Write how many cups of coffee you will need: ")
+    val cups = scanner.nextInt()
+
+    val water = 200
+    val milk = 50
+    val coffee = 15
+
+    // Calculate available resources
+    val availableWater = totalWater / water
+    val availableMilk = totalMilk / milk
+    val availableCoffee = totalCoffee / coffee
+
+    val availableCups: Int
+
+    // The minimum amount of resources is the maximum available cups
+    if (availableWater <= availableMilk) {
+        if (availableWater <= availableCoffee) {
+            availableCups = availableWater
+        } else availableCups = availableCoffee
+    } else if (availableMilk <= availableCoffee){
+        availableCups = availableMilk
+    } else availableCups = availableCoffee
+
+    if (availableCups >= cups){
+        print("Yes, I can make that amount of coffee")
+        if (availableCups > cups){
+            println(" (and even ${availableCups - cups} more than that)")
+        } else println("")
+    } else println("No, I can make only $availableCups cups of coffee")
+}
+
+
+package machine
+import java.util.Scanner
+
+//One cup of coffee made on this coffee machine contains
+//200 ml of water, 50 ml of milk, and 15 g of coffee beans.
+
+//Setting amount of ingredients for a cup of coffee
+val water = 200
+val milk = 50
+val beans = 15
+
+fun main(args: Array<String>) {
+    val scanner = Scanner(System.`in`)
+
+//Ingredients which coffee Machine has
+    var hasWater = scanner.nextInt()
+    var hasMilk = scanner.nextInt()
+    var hasBeans = scanner.nextInt()
+//Number of coffee order
+    val ordered_Coffee = scanner.nextInt()
+
+//ingredients calculation for order
+    val amountWater = water * ordered_Coffee
+    val amountMilk = milk * ordered_Coffee
+    val amountBeans = beans * ordered_Coffee
+//temp variables
+    var possible_Order = 0
+
+/*
+    println("$amountWater ml of water ")
+    println("$amountMilk ml of Milk")
+    println("$amountBeans g of coffee beans")
+*/
+    // ... Calculation ...
+    if ((hasWater > amountWater)&&(hasMilk > amountMilk)&&(hasBeans > amountBeans) ||
+        (hasWater == 0)&& (hasMilk == 0) && (hasBeans == 0) && (ordered_Coffee == 0)  ){
+// ... Calculation ...
+//rem_Ingredient = remaining Ingredient
+
+        val rem_water = ((hasWater-amountWater))
+        val rem_milk = ((hasMilk-amountMilk))
+        val rem_Beans = ((hasBeans-amountBeans))
+
+        val pieceOF_water = rem_water / water
+        val pieceOF_milk = rem_milk / milk
+        val pieceOF_beans = rem_Beans / beans
+
+        //create pieceArray[] = {pieceOF_water, pieceOF_milk, pieceOF_beans}
+        val pieceArray = ArrayList<Int>()
+        pieceArray.add(pieceOF_water)
+        pieceArray.add(pieceOF_milk)
+        pieceArray.add(pieceOF_beans)
+
+        possible_Order = pieceArray.min()!!
+
+        println("Write how many ml of water the coffee machine has: $hasWater")
+        println("Write how many ml of milk the coffee machine has: $hasMilk")
+        println("Write how many grams of coffee beans the coffee machine has: $hasBeans")
+        println("Write how many cups of coffee you will need: $ordered_Coffee")
+
+        if ((possible_Order <= 1 && ordered_Coffee == 1) || ((hasWater == 0)&& (hasMilk == 0) && (hasBeans == 0) && (ordered_Coffee == 0) )){
+            println("Yes, I can make that amount of coffee")
+        }else{
+            println("Yes, I can make that amount of coffee (and even $possible_Order more than that)")
+        }
+
+    }else {
+//if answer equals to 0, then you need to calculate
+//how many cup off caffee you can which  ingredients coffee machine has
+// ... Calculating ...
+
+        val pieceOF_water = hasWater / water
+        val pieceOF_milk = hasMilk / milk
+        val pieceOF_beans = hasBeans / beans
+
+        //create pieceArray[] = {pieceOF_water, pieceOF_milk, pieceOF_beans}
+        val pieceArray = ArrayList<Int>()
+        pieceArray.add(pieceOF_water)
+        pieceArray.add(pieceOF_milk)
+        pieceArray.add(pieceOF_beans)
+
+        possible_Order = pieceArray.min()!!
+
+        println("Write how many ml of water the coffee machine has: $hasWater")
+        println("Write how many ml of milk the coffee machine has: $hasMilk")
+        println("Write how many grams of coffee beans the coffee machine has: $hasBeans")
+        println("Write how many cups of coffee you will need: $ordered_Coffee")
+        println("No, I can make only $possible_Order cups of coffee")
+    }
+}
+
+
+package machine
+import java.util.*
+//200 ml of water, 50 ml of milk, and 15 g of coffee beans
+
+data class Ingredients(val name:String,
+                       val amount:Int,
+                       val unit:String,
+                       var available:Int =0,
+                       var cups:Int=0)
+val water = Ingredients("water", 200, "ml")
+val milk = Ingredients("milk", 50, "ml")
+val coffeeBeans = Ingredients("coffee beans", 15, "g")
+val coffeeIngredients = listOf<Ingredients>(water, milk, coffeeBeans)
+
+fun main() {
+    //get input
+    val scanner = Scanner(System.`in`)
+    water.available = scanner.nextInt()
+    milk.available = scanner.nextInt()
+    coffeeBeans.available = scanner.nextInt()
+    val cupsWanted = scanner.nextInt()
+
+    //calculate number of cups which can be made by each ingredients
+    coffeeIngredients.forEach {
+        it.cups = it.available/it.amount
+    }
+    //find the number of cups which can be made by the ingredients given
+    val minCups = coffeeIngredients.minBy { it.cups }
+
+    //output
+    when {
+        (cupsWanted== minCups!!.cups) -> {
+            println("Yes, I can make that amount of coffee")
+        }
+        (cupsWanted>minCups!!.cups) -> {
+            println("No, I can make only ${minCups!!.cups} cups of coffee")
+        }
+        (cupsWanted<minCups!!.cups) -> {
+            println("Yes, I can make that amount of coffee (and even ${cupsWanted-minCups!!.cups} more than that)")
+        }
+    }
+
+}
+
+
+

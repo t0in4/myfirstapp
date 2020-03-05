@@ -1,0 +1,61 @@
+coffee3
+Wrong answer in test #1
+
+No, I can make only 0 cup(s) of coffee
+
+Please find below the output of your program during this failed test.
+Note that the '>' character indicates the beginning of the input line.
+
+---
+
+Write how many ml of water the coffee machine has:>300
+Write how many ml of milk the coffee machine has: >65
+Write how many grams of coffee beans the coffee machine has:>111
+Write how many cups of coffee you will need: >1
+No, I can make only 1 cups of coffee
+
+Write how many ml of water the coffee machine has: > 300
+Write how many ml of milk the coffee machine has: > 65
+Write how many grams of coffee beans the coffee machine has: > 100
+Write how many cups of coffee you will need: > 1
+Yes, I can make that amount of coffee
+Write how many ml of water the coffee machine has: > 500
+Write how many ml of milk the coffee machine has: > 250
+Write how many grams of coffee beans the coffee machine has: > 200
+Write how many cups of coffee you will need: > 10
+No, I can make only 2 cups of coffee
+Write how many ml of water the coffee machine has: > 1550
+Write how many ml of milk the coffee machine has: > 299
+Write how many grams of coffee beans the coffee machine has: > 300
+Write how many cups of coffee you will need: > 3
+Yes, I can make that amount of coffee (and even 2 more than that)
+Write how many ml of water the coffee machine has: > 0
+Write how many ml of milk the coffee machine has: > 0
+Write how many grams of coffee beans the coffee machine has: > 0
+Write how many cups of coffee you will need: > 1
+No, I can make only 0 cups of coffee
+Write how many ml of water the coffee machine has: > 0
+Write how many ml of milk the coffee machine has: > 0
+Write how many grams of coffee beans the coffee machine has: > 0
+Write how many cups of coffee you will need: > 0
+Yes, I can make that amount of coffee
+Write how many ml of water the coffee machine has: > 200
+Write how many ml of milk the coffee machine has: > 50
+Write how many grams of coffee beans the coffee machine has: > 15
+Write how many cups of coffee you will need: > 0
+Yes, I can make that amount of coffee (and even 1 more than that)
+Write how many ml of water the coffee machine has:>600
+Write how many ml of milk the coffee machine has: >153
+Write how many grams of coffee beans the coffee machine has:>100
+Write how many cups of coffee you will need: >1
+Write how many ml of water the coffee machine has:>1400
+Write how many ml of milk the coffee machine has: >150
+Write how many grams of coffee beans the coffee machine has:>100
+Write how many cups of coffee you will need: >1
+
+Write how many ml of water the coffee machine has:>1400
+Write how many ml of milk the coffee machine has: >150
+Write how many grams of coffee beans the coffee machine has:>100
+Write how many cups of coffee you will need: >1
+Yes, I can make that amount of coffee
+(and even 6 more than that)

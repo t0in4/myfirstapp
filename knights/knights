@@ -1,0 +1,51 @@
+There are coordinates of two knights on the chessboard. Find out, whether they beat each other or not.
+
+
+
+Input data format
+
+Four integer numbers x_1, y_1, x_2, y_2x 
+1
+​	
+ ,y 
+1
+​	
+ ,x 
+2
+​	
+ ,y 
+2
+​	
+ .
+
+Output data format
+
+Type "YES" (uppercase) if they beat each other and "NO" if they don't.
+
+You may need a method, that calculates the absolute value of the number. Here:
+
+Math.abs(n)
+Sample Input 1:
+
+1 1 2 3
+Sample Output 1:
+
+YES
+Sample Input 2:
+
+1 1 2 2
+Sample Output 2:
+
+NO
+Sample Input 3:
+
+1 1 1 4
+Sample Output 3:
+
+NO
+Sample Input 4:
+
+4 3 3 5
+Sample Output 4:
+
+YES
